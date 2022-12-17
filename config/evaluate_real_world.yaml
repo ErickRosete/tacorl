@@ -1,0 +1,9 @@
+defaults:
+  - robot_io: lmp
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+module_path: ~/tacorl/models/lmp_gripper_real_world/smaller_val_loss.ckpt
+img_path: /home/meeso/goals/start_drawer.jpg
+render: True

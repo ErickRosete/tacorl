@@ -1,0 +1,8 @@
+defaults:
+  - base_env
+
+name: play-table-v0
+max_episode_steps: 100
+task: open_drawer
+modalities:
+  - rgb_static

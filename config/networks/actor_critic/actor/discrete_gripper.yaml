@@ -1,0 +1,6 @@
+defaults:
+  - policy: discrete_gripper
+
+_target_: tacorl.networks.actor_critic.actor.Actor
+_recursive_: False
+discrete_gripper: True

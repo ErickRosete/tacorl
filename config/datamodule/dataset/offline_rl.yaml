@@ -1,0 +1,6 @@
+defaults:
+  - modalities: no_action
+
+_target_: tacorl.dataset.offline_replay_buffer_dataset.OfflineReplayBufferDataset
+data_dir: ~/tacorl/open_slider/
+transf_type: "train"

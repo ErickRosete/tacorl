@@ -1,0 +1,8 @@
+defaults:
+  - policy: d2rl_discrete_gripper
+
+_target_: tacorl.networks.actor_critic.actor.Actor
+_recursive_: False
+encoder_path: null
+latent_plan_dim: ${latent_plan_dim}
+discrete_gripper: True

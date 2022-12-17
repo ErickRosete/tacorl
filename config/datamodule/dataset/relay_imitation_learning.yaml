@@ -1,0 +1,7 @@
+defaults:
+  - modalities: all_modalities
+
+_target_: tacorl.datamodule.dataset.relay_imitation_learning_dataset.RILDataset
+_recursive_: False
+max_low_level_window: 30
+max_high_level_window: 260

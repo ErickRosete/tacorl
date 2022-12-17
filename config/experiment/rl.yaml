@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - /scene: calvin_scene_D
+  - /robot: panda_longer_finger
+  - /cameras: all_cameras
+  - /trainer: rl
+  - _self_
+
+data_path: data  
+latent_plan_dim: 0

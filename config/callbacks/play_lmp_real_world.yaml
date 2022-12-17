@@ -1,0 +1,3 @@
+defaults:
+  - checkpoint: play_lmp_real_world
+  - kl_schedule: constant

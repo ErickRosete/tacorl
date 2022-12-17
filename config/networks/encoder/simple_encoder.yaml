@@ -1,0 +1,16 @@
+_target_: tacorl.networks.visual_encoders.encoder.CustomEncoder
+input_width: 128
+input_height: 128
+input_channels: 3
+latent_dim: 32
+kernel_sizes: [3, 3, 3]
+n_channels: [16, 16, 16]
+strides: [1, 1, 1]
+paddings: [1, 1, 1]
+pool_type: max2d
+pool_sizes: [2, 2, 2]
+pool_strides: [2, 2, 2]
+pool_paddings: [0, 0, 0]
+spectral_norm_conv: False
+spectral_norm_fc: False
+dropout: False

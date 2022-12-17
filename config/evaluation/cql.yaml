@@ -1,0 +1,10 @@
+# @package _global_
+defaults:
+  - base
+  - rollout_manager@evaluation.rollout_manager: rl_rollout
+  - _self_
+
+module_path: ~/tacorl/models/cql
+
+env:
+  max_episode_steps: 180

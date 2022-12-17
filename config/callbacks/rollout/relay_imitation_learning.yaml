@@ -1,0 +1,4 @@
+defaults:
+  - all_tasks_every_5_epochs
+  - override /evaluation/rollout_manager@rollout_manager: relay_imitation_learning
+  - _self_

@@ -1,0 +1,5 @@
+_target_: tacorl.networks.visual_encoders.encoder.LMPVisionEncoder
+vib: True
+latent_dim: 32
+hidden_dim: 256
+normalize_output: False

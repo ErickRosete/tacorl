@@ -1,0 +1,3 @@
+defaults:
+  - checkpoint: accuracy
+  - rollout: default

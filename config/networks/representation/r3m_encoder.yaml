@@ -1,0 +1,6 @@
+defaults:
+  - /networks/encoder@networks.rgb_static: r3m_encoder
+  - /networks/encoder@networks.rgb_gripper: r3m_encoder
+
+_target_: tacorl.networks.representation.representation_network.LateFusion
+_recursive_: False

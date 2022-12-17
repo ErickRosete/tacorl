@@ -1,0 +1,4 @@
+defaults:
+  - d2rl_discrete_gripper
+  - /networks/encoder@encoder: resnet18_fixed_imagenet
+  - _self_

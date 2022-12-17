@@ -1,0 +1,4 @@
+_target_: tacorl.networks.actor_critic.actor.DenseNetPolicy
+num_layers: 8
+hidden_dim: 256
+discrete_gripper: True

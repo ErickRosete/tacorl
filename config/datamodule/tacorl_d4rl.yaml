@@ -1,0 +1,8 @@
+defaults:
+  - dataset: tacorl_d4rl
+  - transform_manager: rl
+
+_target_: tacorl.datamodule.d4rl_data_module.D4RLDataModule
+_recursive_: false
+batch_size: 64
+num_workers: 4

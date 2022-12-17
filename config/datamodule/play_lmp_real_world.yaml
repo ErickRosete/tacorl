@@ -1,0 +1,18 @@
+defaults:
+  - dataset: play_dataset
+  - transform_manager: rl_real_world
+
+_target_: tacorl.datamodule.basic_data_module.BasicDataModule
+_recursive_: false
+data_dir: ~/tacorl/real_world
+batch_size: 64
+num_workers: ${num_workers}
+val_percentage: 1.0
+train_percentage: 1.0
+shuffle_val: false
+
+dataset:
+  real_world: True
+  modalities: [rgb_static, rel_actions_world]
+  min_window_size: 20
+  max_window_size: 32

@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - rl
+  - /logger: default
+  - /callbacks: play_lmp_d4rl
+  - /module: play_lmp_d4rl
+  - /datamodule: play_lmp_d4rl
+  - _self_
+
+d4rl_env: antmaze-large-diverse-v0
+latent_plan_dim: 16
+num_workers: 4
+
+module:
+  d4rl_env: ${d4rl_env}
+
+datamodule:
+  num_workers: ${num_workers}
+  dataset:
+    min_window_size: 8
+    max_window_size: 8
+    d4rl_env: ${d4rl_env}

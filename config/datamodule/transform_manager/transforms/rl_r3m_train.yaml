@@ -1,0 +1,21 @@
+train:
+  rgb_static:
+    - _target_: tacorl.utils.transforms.ScaleImageTensor # 0 to 255 -> 0 to 1
+    - _target_: tacorl.utils.transforms.ColorTransform
+      contrast: 0.05
+      brightness: 0.05
+      hue: 0.02
+    - _target_: tacorl.utils.transforms.UpScaleImageTensor #0 to 1 -> 0 to 255
+  rgb_gripper:
+    - _target_: torchvision.transforms.Resize
+      size: 84
+    - _target_: tacorl.utils.transforms.ScaleImageTensor # 0 to 255 -> 0 to 1
+    - _target_: tacorl.utils.transforms.ColorTransform
+      contrast: 0.05
+      brightness: 0.05
+      hue: 0.02
+    - _target_: tacorl.utils.transforms.RandomShiftsAug
+      pad: 4
+    - _target_: torchvision.transforms.Normalize #0 to 1 -> -1 to 1
+      mean: [0.5,]
+      std: [0.5,]

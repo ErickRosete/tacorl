@@ -1,0 +1,11 @@
+defaults:
+  - modalities: all_modalities
+  - tasks: open_close
+
+_target_: tacorl.datamodule.dataset.goal_cond_replay_buffer_dataset.GoalCondReplayBufferDataset
+nn_steps_from_step_path: ~/tacorl/calvin/nn_steps_from_step.json
+filter_by_tasks: False
+goal_sampling_prob: 0.3
+goal_strategy_prob:
+  geometric: 0.9
+  similar_robot_obs: 0.1

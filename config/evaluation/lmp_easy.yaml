@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - lmp
+  - rollout_generator@evaluation.single_task_rollout_generator: single_task
+  - _self_
+
+eval_type: short_horizon
+filename: lmp_easy_tasks.json

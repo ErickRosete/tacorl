@@ -1,0 +1,42 @@
+# rotating
+- rotate_red_block_right
+- rotate_red_block_left
+- rotate_blue_block_right
+- rotate_blue_block_left
+- rotate_pink_block_right
+- rotate_pink_block_left
+  # pushing
+- push_red_block_right
+- push_red_block_left
+- push_blue_block_right
+- push_blue_block_left
+- push_pink_block_right
+- push_pink_block_left
+  # open/close
+- move_slider_left
+- move_slider_right
+- open_drawer
+- close_drawer
+  # lifting
+- lift_red_block_table
+- lift_red_block_slider
+- lift_red_block_drawer
+- lift_blue_block_table
+- lift_blue_block_slider
+- lift_blue_block_drawer
+- lift_pink_block_table
+- lift_pink_block_slider
+- lift_pink_block_drawer
+  # placing
+- place_in_slider
+- place_in_drawer
+  # stacking
+- stack_block
+- unstack_block
+  # lights
+- turn_on_lightbulb
+- turn_off_lightbulb
+- turn_on_led
+- turn_off_led
+  # pushing into drawer
+- push_into_drawer

@@ -1,0 +1,6 @@
+defaults:
+  - default
+  - _self_
+
+val_every_n_episodes: 10 
+val_every_n_epochs: null

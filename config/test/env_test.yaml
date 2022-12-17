@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - /experiment@_here_: rl
+  - /env: goal_conditioned
+  - _self_
+
+env:
+  modalities: ["robot_obs", "scene_obs"]
+  goal_modalities: ['rgb_static']

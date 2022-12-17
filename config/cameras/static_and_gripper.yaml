@@ -1,0 +1,3 @@
+defaults:
+  - cameras@static: static_v1
+  - cameras@gripper: gripper

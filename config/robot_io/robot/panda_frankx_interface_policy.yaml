@@ -1,0 +1,56 @@
+_target_: robot_io.robot_interface.panda_frankx_interface.PandaFrankXInterface
+_recursive_: false
+fci_ip: "192.168.180.87"
+urdf_path: "misc/panda_urdf/panda_longer_finger.urdf"
+ll: [-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -0.0175, -2.8973]
+ul: [2.8973, 1.7628, 2.8973, -0.0698, 2.8973, 3.7525, 2.8973]
+#neutral_pose: [-1.6984557714179116, 0.9218021509267583, 1.8161416658658551, -2.418298423198231, -0.9560779526895947, 1.9015431017736373, 1.4820111242348053]
+neutral_pose:  [-0.017792060227770554, -0.7601235411041661, 0.019782607023391807, -2.342050140544315, 0.029840531355804868, 1.5411935298621688, 0.7534486589746342]
+#workspace_limits:  [[0.2, -0.5, 0.02], [0.8, 0.5, 0.7]]  # bounding box [[x_min, y_min, z_min], [x_max, y_max, z_max]] or hollow cylinder [r_in, r_out, z_min, z_max].
+workspace_limits:  [0.2, 0.6, 0.02, 0.6]  # bounding box [[x_min, y_min, z_min], [x_max, y_max, z_max]] or hollow cylinder [r_in, r_out, z_min, z_max].
+use_impedance: true
+
+libfranka_params:
+  contact_torque_threshold: [20, 20, 18, 18, 16, 14, 12]
+  collision_torque_threshold: [100, 100, 100, 100, 100, 100, 100]  # 20
+  contact_force_threshold: [5, 5, 5, 5, 5, 5]
+  collision_force_threshold: [30, 30, 30, 30, 30, 30]   # 30
+#  collision_force_threshold: [100, 100, 100, 100, 100, 100]   # 30
+  franka_joint_impedance: [50, 50, 50, 50, 50, 50, 50]
+#  franka_joint_impedance: [ 3000, 3000, 3000, 2500, 2500, 2000, 2000 ]
+
+frankx_params:
+  velocity_rel: 0.2
+  acceleration_rel: 0.2
+  jerk_rel: 0.2
+
+impedance_params:
+  translational_stiffness: 600  # 400 for teleop, 600 for 3dmouse / policy
+  rotational_stiffness: 200  # 60 for teleop, 200 for 3dmouse / policy
+  damping_xi: [1, 1, 1, 0.5, 0.5, 0.5]
+  joint_stiffness: 200
+  # nullspace control for impedance mode
+  use_nullspace: true
+  nullspace_stiffness: 10
+  q_d_nullspace: [-0.017792060227770554, -0.7601235411041661, 0.019782607023391807, -2.342050140544315, 0.029840531355804868, 1.5411935298621688, 0.7534486589746342]
+
+gripper_params:
+  speed: 1
+  force: 20
+  timeout: 2
+  opening_threshold: 0.04
+  closing_threshold: 0.04
+
+rel_action_params:
+  relative_action_reference_frame: "desired"  # "current" or "desired"
+  relative_action_control_frame: "tcp"  # "tcp" or "world"
+  relative_pos_clip_threshold: 0.05
+  relative_rot_clip_threshold: 0.3
+  max_ee_pitch: 30  # degrees
+  max_ee_roll: 60  # degrees
+  limit_control_5_dof: false
+  default_orn_x: 3.141593
+  default_orn_y: 0
+
+defaults:
+  - ik: ik_fast_panda

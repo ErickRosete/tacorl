@@ -1,0 +1,13 @@
+defaults:
+  - /networks/actor_critic/actor@plan_proposal: default
+  - /networks/plan_recognition@plan_recognition: transformer
+  - /networks/action_decoder@action_decoder: logistic
+  - _self_
+
+_target_: tacorl.modules.play_lmp.play_lmp_d4rl.PlayLMP
+_recursive_: False
+lr: 1e-4
+kl_beta: 1e-3
+
+action_decoder:
+  discrete_gripper: False

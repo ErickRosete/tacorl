@@ -1,0 +1,26 @@
+# @package _global_
+defaults:
+  - rl
+  - /env: goal_conditioned
+  - /logger: default
+  - /callbacks: relay_imitation_learning
+  - /module: relay_imitation_learning
+  - /datamodule: relay_imitation_learning
+  - /datamodule/dataset/modalities@env.modalities: rgb_static
+  - /datamodule/dataset/modalities@env.goal_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.high_level_policy_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.low_level_policy_modalities: rgb_static
+  - override /datamodule/dataset/modalities: rgb_static_and_rel_actions
+  - _self_
+
+num_workers: 4
+latent_goal_dim: 32
+module:
+  env: ${env}
+  low_level_policy:
+    goal_dim: ${latent_goal_dim}
+    action_dim: 7
+  high_level_policy:
+    action_dim: ${latent_goal_dim}
+  goal_encoder:
+    out_features: ${latent_goal_dim}

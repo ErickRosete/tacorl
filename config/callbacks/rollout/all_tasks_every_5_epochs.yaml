@@ -1,0 +1,7 @@
+defaults:
+  - default
+  - _self_
+  
+val_every_n_epochs: 5 
+eval_strategy: all_tasks
+num_rollouts_per_task: 8

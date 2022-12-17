@@ -1,0 +1,2 @@
+_target_: tacorl.utils.callbacks.increase_horizon.IncreaseHorizonLinear
+_recursive_: False

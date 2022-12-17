@@ -1,0 +1,4 @@
+defaults:
+  - checkpoint: play_lmp_d4rl
+  - kl_schedule: constant
+  - rollout: lmp_d4rl

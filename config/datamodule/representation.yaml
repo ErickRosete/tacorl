@@ -1,0 +1,12 @@
+defaults:
+  - transform_manager: representation
+  - dataset: representation_learning
+  - _self_
+
+_target_: tacorl.datamodule.basic_data_module.BasicDataModule
+_recursive_: False
+data_dir: ~/tacorl/calvin
+num_workers: 4
+batch_size: 64
+shuffle_val: False
+pin_memory: True

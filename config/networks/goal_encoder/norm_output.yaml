@@ -1,0 +1,6 @@
+_target_: tacorl.networks.visual_encoders.goal_encoder.VisualGoalEncoder
+in_features: null
+out_features: null
+activation_function: ReLU
+hidden_size: 256
+normalize_output: True

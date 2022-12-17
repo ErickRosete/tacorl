@@ -1,0 +1,31 @@
+# @package _global_
+defaults:
+  - rl
+  - /env: goal_conditioned
+  - /logger: default
+  - /callbacks: play_lmp
+  - /module: play_lmp_for_rl
+  - /datamodule: play_lmp
+  - /datamodule/dataset/modalities@env.modalities: rgb_static
+  - /datamodule/dataset/modalities@env.goal_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_proposal_goal_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_proposal_obs_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_recognition_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.action_decoder_modalities: rgb_static
+  - override /datamodule/dataset/modalities: rgb_static_and_rel_actions
+  - override /networks/representation@module.perceptual_encoder: r3m_encoder
+  - override /datamodule/transform_manager: rl_r3m
+  - _self_
+
+latent_plan_dim: 16
+num_workers: 4
+
+datamodule:
+  num_workers: ${num_workers}
+  batch_size: 32
+  dataset:
+    min_window_size: 8
+    max_window_size: 16
+
+module:
+  env: ${env}

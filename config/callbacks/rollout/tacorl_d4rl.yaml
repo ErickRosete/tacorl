@@ -1,0 +1,9 @@
+defaults:
+  - /evaluation/rollout_manager@rollout_manager: tacorl_d4rl
+  - _self_
+
+_target_: tacorl.utils.callbacks.rollout_d4rl.Rollout
+_recursive_: False
+val_episodes: 40
+val_every_n_epochs: 1
+skip_first_n_epochs: 0

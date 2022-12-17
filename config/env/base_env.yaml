@@ -1,0 +1,12 @@
+seed: 0
+bullet_time_step: 240.0
+use_vr: false
+show_gui: false
+robot_cfg: ${robot}
+scene_cfg: ${scene}
+use_scene_info: false
+use_egl: False
+control_freq: 30
+end_effector_pose: True
+cameras: ${cameras}
+action_type: rel_world

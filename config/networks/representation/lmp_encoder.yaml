@@ -1,0 +1,6 @@
+defaults:
+  - /networks/encoder@networks.rgb_static: lmp_vision_encoder
+  - /networks/encoder@networks.rgb_gripper: lmp_vision_encoder
+
+_target_: tacorl.networks.representation.representation_network.LateFusion
+_recursive_: False

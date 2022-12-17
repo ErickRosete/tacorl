@@ -1,0 +1,7 @@
+_target_: tacorl.networks.visual_encoders.encoder.R3MResNet
+latent_dim: 32
+hidden_dim: 256
+activation_function: ReLU
+resnet_model: resnet18
+freeze_backbone: True
+device: cuda:0

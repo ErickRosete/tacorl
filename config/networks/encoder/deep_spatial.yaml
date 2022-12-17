@@ -1,0 +1,2 @@
+_target_: tacorl.networks.visual_encoders.encoder.DeepSpatialEncoder
+freeze_backbone: False

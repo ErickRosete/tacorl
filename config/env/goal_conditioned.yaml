@@ -1,0 +1,12 @@
+defaults:
+  - base_env
+  - initial_and_goal_states: open_close_5
+  - tasks: playtable_tasks
+
+name: goal-conditioned-v0
+max_episode_steps: 256
+use_scene_info: True
+modalities:
+  - rgb_static
+goal_modalities: 
+  - rgb_static

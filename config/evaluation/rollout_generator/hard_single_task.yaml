@@ -1,0 +1,6 @@
+_target_: tacorl.evaluation.rollout_generator.SingleTaskRolloutGenerator
+data_dir: ~/tacorl/calvin
+start_end_tasks: ~/tacorl/calvin/hard_start_end_tasks.json
+strategy: shortest
+min_seq_len: 10
+max_seq_len: 300

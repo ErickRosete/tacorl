@@ -1,0 +1,4 @@
+_target_: tacorl.networks.actor_critic.critic.MLPQNetwork
+num_layers: 3
+hidden_dim: 256
+last_layer_activation: Identity

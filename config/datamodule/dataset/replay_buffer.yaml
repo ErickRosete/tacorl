@@ -1,0 +1,7 @@
+defaults:
+  - modalities: all_modalities
+
+_target_: tacorl.dataset.offline_replay_buffer_dataset.OfflineReplayBufferDataset
+data_dir: ~/tacorl/replay_buffer/
+transf_type: "validation"
+include_next_obs: False

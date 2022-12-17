@@ -1,0 +1,2 @@
+_target_: tacorl.evaluation.rollout_manager_d4rl.LatentPlanRollout
+plan_duration: 15

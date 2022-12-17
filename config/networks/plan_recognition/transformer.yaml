@@ -1,0 +1,13 @@
+_target_: tacorl.networks.plan_encoders.plan_recognition_transformer.PlanRecognitionTransformersNetwork
+num_heads: 8
+num_layers: 2
+encoder_hidden_size: 2048
+fc_hidden_size: 4096
+state_dim: null
+latent_plan_dim: ${latent_plan_dim}
+min_std: 0.0001
+dropout_p: 0.1
+encoder_normalize: false
+positional_normalize: false
+position_embedding: true
+max_position_embeddings: ${datamodule.dataset.max_window_size}

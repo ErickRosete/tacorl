@@ -1,0 +1,4 @@
+defaults:
+  - cameras@static_v1: static_v1
+  - cameras@static_v2: static_v2
+  - cameras@gripper: gripper

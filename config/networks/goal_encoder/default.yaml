@@ -1,0 +1,6 @@
+_target_: tacorl.networks.visual_encoders.goal_encoder.VisualGoalEncoder
+in_features: null
+out_features: null
+activation_function: ReLU
+last_layer_activation: Identity
+hidden_size: 256

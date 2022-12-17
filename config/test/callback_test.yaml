@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - /experiment: cql_offline_goal_cond
+  - _self_
+
+datamodule:
+  val_percentage: 0.001
+  train_percentage: 0.001

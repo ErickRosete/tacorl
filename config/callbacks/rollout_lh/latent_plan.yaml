@@ -1,0 +1,4 @@
+defaults:
+  - default
+  - override /evaluation/rollout_manager@rollout_manager: latent_plan_rollout
+  - _self_

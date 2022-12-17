@@ -1,0 +1,8 @@
+accelerator: gpu
+devices: -1
+strategy: ddp
+precision: 16
+max_steps: 100000
+callbacks: null
+logger: null
+profiler: simple

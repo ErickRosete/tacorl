@@ -1,0 +1,12 @@
+defaults:
+  - dataset: play_dataset
+  - transform_manager: rl
+
+_target_: tacorl.datamodule.basic_data_module.BasicDataModule
+_recursive_: false
+data_dir: ~/tacorl/calvin
+batch_size: 64
+num_workers: 4
+val_percentage: 0.2
+train_percentage: 1.0
+shuffle_val: false

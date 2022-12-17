@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - tacorl_real_world
+  - _self_
+
+datamodule:
+  dataset:
+    modalities: [rgb_static, rgb_gripper, rel_actions_gripper]
+    action_type: rel_actions_gripper
+module: 
+  play_lmp_dir: ~/tacorl/models/lmp_gripper_real_world

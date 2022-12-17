@@ -1,0 +1,9 @@
+defaults:
+  - evaluation: lmp_d4rl
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+render: False
+d4rl_env: maze2d-medium-v1
+num_rollouts: 100

@@ -1,0 +1,11 @@
+# @package _global_
+defaults:  
+  - /evaluation/rollout_manager@evaluation.rollout_manager: latent_plan_rollout_d4rl
+  - _self_
+
+filename: lmp_d4rl.json
+module_path: ~/tacorl/models/d4rl/lmp_maze2d_medium
+
+evaluation:
+  rollout_manager:
+    plan_duration: 7

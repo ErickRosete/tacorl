@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+
+monitor: val_episode_return
+mode: max
+save_last: False
+filename: epoch_{epoch:02d}_val_return_{val_episode_return:.3f}

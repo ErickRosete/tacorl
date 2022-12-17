@@ -1,0 +1,19 @@
+defaults:
+  - robot_io: tacorl
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+module_path: /home/meeso/datasets/rw_new_models_erick/lmp_r3m_gripper_static_8_16_p256_r64_0614-1559
+evaluation:
+  render: True
+  reset_from_robot_obs: False
+  rollout_manager: ${rollout_manager}
+  start_goal_proposer:
+    data_dir: /home/meeso/block_drawer_play_filt_15hz/
+    train: True
+    window_size: 64
+
+env:
+  freq: 10
+  max_episode_steps: 500

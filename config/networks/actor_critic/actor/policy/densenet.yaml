@@ -1,0 +1,3 @@
+_target_: tacorl.networks.actor_critic.actor.DenseNetPolicy
+num_layers: 2
+hidden_dim: 256

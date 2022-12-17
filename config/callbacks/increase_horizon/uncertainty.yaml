@@ -1,0 +1,4 @@
+_target_: tacorl.utils.callbacks.increase_horizon_uncertainty.IncreaseHorizonUncertainty
+_recursive_: False
+forward_passes: 4
+std_threshold: 0.3

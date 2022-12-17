@@ -1,0 +1,19 @@
+# @package _global_
+defaults:
+  - /trainer: rl
+  - /logger: default
+  - /callbacks: play_lmp_real_world
+  - /module: play_lmp_for_rl
+  - /datamodule: play_lmp_real_world
+  - _self_
+
+latent_plan_dim: 32
+num_workers: 4
+data_dir: ~/tacorl/calvin
+  
+module: 
+  real_world: True
+  plan_proposal_goal_modalities: [rgb_static]
+  plan_proposal_obs_modalities: [rgb_static]
+  plan_recognition_modalities: [rgb_static]
+  action_decoder_modalities: [rgb_static]

@@ -1,0 +1,3 @@
+_target_: tacorl.evaluation.rollout_manager_d4rl.TACORL
+plan_duration: 15
+use_cem: False

@@ -1,0 +1,7 @@
+defaults:
+  - q_network: d2rl
+
+_target_: tacorl.networks.actor_critic.critic.Critic
+_recursive_: False
+encoder_path: null
+latent_plan_dim: ${latent_plan_dim}

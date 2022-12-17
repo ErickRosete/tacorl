@@ -1,0 +1,9 @@
+_target_: robot_io.cams.camera_manager.CameraManager
+_recursive_: false
+use_gripper_cam: false
+use_static_cam: false
+threaded_cameras: false
+
+defaults:
+  - gripper_cam: framos
+  - static_cam: kinect4

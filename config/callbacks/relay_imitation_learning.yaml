@@ -1,0 +1,4 @@
+defaults:
+  - checkpoint: accuracy
+  - rollout: relay_imitation_learning
+  - rollout_lh: relay_imitation_learning

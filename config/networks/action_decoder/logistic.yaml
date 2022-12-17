@@ -1,0 +1,12 @@
+_target_: tacorl.networks.action_decoders.action_decoder_logistic.ActionDecoderLogistic
+n_mixtures: 10
+num_layers: 2
+hidden_size: 2048
+out_features: 7
+act_max_bound: [1., 1., 1., 1., 1., 1., 1.,]  
+act_min_bound: [-1., -1., -1., -1., -1., -1., -1]
+policy_rnn_dropout_p: 0.0
+num_classes: 10
+latent_plan_dim: ${latent_plan_dim}
+rnn_model: rnn_decoder
+include_goal: false

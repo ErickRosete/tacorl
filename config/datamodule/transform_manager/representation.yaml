@@ -1,0 +1,7 @@
+defaults:
+  - transforms:
+    - representation_train
+    - representation_validation
+    - visualization
+  - default
+  - _self_

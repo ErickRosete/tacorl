@@ -1,0 +1,14 @@
+defaults:
+  - transform_manager: rl
+  - dataset: goal_cond_replay_buffer
+  - _self_
+
+_target_: tacorl.datamodule.basic_data_module.BasicDataModule
+_recursive_: False
+data_dir: ~/tacorl/calvin
+num_workers: 4
+batch_size: 64
+pin_memory: True
+val_percentage: 0.2
+train_percentage: 1.0
+shuffle_val: false

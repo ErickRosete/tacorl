@@ -1,0 +1,3 @@
+_target_: pytorch_lightning.loggers.WandbLogger
+resume: allow
+id: null

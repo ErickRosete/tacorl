@@ -1,0 +1,5 @@
+_target_: tacorl.evaluation.rollout_generator.LongHorizonSequentialRolloutGenerator
+data_dir: ~/tacorl/calvin
+start_end_tasks: ~/tacorl/calvin/start_end_tasks.json
+tasks_per_rollout: 5
+strategy: shortest

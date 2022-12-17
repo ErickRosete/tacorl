@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - rl
+  - /env: goal_conditioned
+  - /logger: default
+  - /callbacks: offline_rl_goal_cond
+  - /module: cql_offline_goal_cond
+  - /datamodule: offline_rl_calvin
+  - /datamodule/dataset/modalities@env.modalities: rgb_static
+  - /datamodule/dataset/modalities@env.goal_modalities: rgb_static
+  - override /datamodule/dataset/modalities: rgb_static_and_rel_actions
+  - _self_
+
+num_workers: 4
+datamodule:
+  train_percentage: 1.0
+  val_percentage: 0.2
+  num_workers: ${num_workers}
+  batch_size: 32
+
+module:
+  env: ${env}

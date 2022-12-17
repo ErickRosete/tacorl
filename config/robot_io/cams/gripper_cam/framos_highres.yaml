@@ -1,0 +1,20 @@
+_target_: robot_io.cams.realsense.realsense.Realsense
+_recursive_: false
+name: framos
+fps: 30
+img_type: "rgb_depth"
+resolution: [640, 480]
+#resize_resolution: [200, 200]
+#crop_coords: [0, 480, 80, 560]
+params:
+  brightness: 3.0
+  contrast: 50.0
+  exposure: 41.0
+  gain: 64.0
+  gamma: 300.0
+  hue: 0.0
+  saturation: 64.0
+  sharpness: 50.0
+  white_balance: 3400.0
+  enable_auto_exposure: 1.0
+  enable_auto_white_balance: 1.0

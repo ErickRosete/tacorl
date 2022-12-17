@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - tacorl
+  - rollout_generator@evaluation.long_horizon_seq_rollout_generator: long_horizon_sequential
+  - _self_
+
+eval_type: long_horizon_sequential
+filename: tacorl_lh_seq_easy_tasks.json

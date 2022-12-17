@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - ril
+  - rollout_generator@evaluation.long_horizon_rollout_generator: long_horizon
+  - _self_
+
+eval_type: long_horizon
+filename: ril_lh_easy_tasks.json
+
+env:
+  max_episode_steps: 300

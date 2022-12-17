@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+  
+monitor: validation/q1_data_epoch
+mode: max
+save_last: True
+filename: epoch_{epoch:02d}_val_qdata_{validation/q1_data_epoch:.3f}
+save_top_k: -1

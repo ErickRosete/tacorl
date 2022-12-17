@@ -1,0 +1,8 @@
+defaults:
+  - /networks/encoder@encoder: lmp_vision_encoder
+  - policy: densenet_discrete_gripper
+
+_target_: tacorl.networks.actor_critic.actor.Actor
+_recursive_: False
+latent_plan_dim: ${latent_plan_dim}
+discrete_gripper: True

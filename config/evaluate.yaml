@@ -1,0 +1,8 @@
+defaults:
+  - evaluation: tacorl_lh_seq_easy
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+  - _self_
+
+render: False
+module_path: ~/tacorl/models/tacorl_s3

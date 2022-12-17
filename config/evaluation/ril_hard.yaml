@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - ril
+  - rollout_generator@evaluation.single_task_rollout_generator: hard_single_task
+  - _self_
+
+eval_type: short_horizon
+filename: ril_hard_tasks.json

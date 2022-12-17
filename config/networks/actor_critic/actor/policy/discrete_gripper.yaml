@@ -1,0 +1,4 @@
+_target_: tacorl.networks.actor_critic.actor.MLPPolicy
+num_layers: 3
+hidden_dim: 256
+discrete_gripper: True

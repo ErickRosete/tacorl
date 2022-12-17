@@ -1,0 +1,5 @@
+defaults:
+  - default
+  - _self_
+  
+eval_strategy: env_tasks

@@ -1,0 +1,4 @@
+defaults:
+  - checkpoint: accuracy
+  - rollout: all_tasks_every_5_epochs
+  - rollout_lh: default

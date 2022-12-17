@@ -1,0 +1,5 @@
+defaults:
+  - q_network: densenet
+
+_target_: tacorl.networks.actor_critic.critic.Critic
+_recursive_: False

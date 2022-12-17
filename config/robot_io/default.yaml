@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - /robot_io/env@env: env_goal
+  - /robot_io/robot@robot: panda_frankx_interface_policy
+  - /robot_io/cams@cams: camera_manager
+  - /datamodule/transform_manager@transform_manager: rl_real_world
+  - _self_
+
+env:
+  freq: 5
+  show_fps: False

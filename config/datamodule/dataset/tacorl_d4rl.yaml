@@ -1,0 +1,7 @@
+_target_: tacorl.datamodule.dataset.d4rl_play_dataset.D4RLPlayDataset
+_recursive_: False
+min_window_size: 8
+max_window_size: 16
+pad: true
+include_goal: true
+goal_sampling_prob: 0.3

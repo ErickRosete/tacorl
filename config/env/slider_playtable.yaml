@@ -1,0 +1,9 @@
+defaults:
+  - base_env
+
+name: play-table-v0
+sparse_reward: False
+max_episode_steps: 100
+task: open_slider
+modalities:
+  - rgb_static

@@ -1,0 +1,4 @@
+defaults:
+  - experiment: relay_imitation_learning
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog

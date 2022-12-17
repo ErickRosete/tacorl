@@ -1,0 +1,2 @@
+_target_: tacorl.networks.actor_critic.actor.D2RLPolicy
+hidden_dim: 1024

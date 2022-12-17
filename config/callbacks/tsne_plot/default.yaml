@@ -1,0 +1,10 @@
+defaults:
+  - /env/tasks@tasks: playtable_tasks
+
+_target_: tacorl.utils.callbacks.tsne_plot.TSNEPlot
+_recursive_: False
+perplexity: 40
+n_jobs: 8
+plot_percentage: 1.0
+opacity: 0.3
+marker_size: 5

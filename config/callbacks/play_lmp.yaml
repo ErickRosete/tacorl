@@ -1,0 +1,6 @@
+defaults:
+  - checkpoint: accuracy
+  - rollout: latent_plan
+  - rollout_lh: latent_plan
+  - kl_schedule: constant
+  - tsne_plot: default

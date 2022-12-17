@@ -1,0 +1,5 @@
+# @package _global_
+defaults:
+  - default
+  - /evaluation/rollout_manager@rollout_manager: latent_plan_rollout
+  - _self_

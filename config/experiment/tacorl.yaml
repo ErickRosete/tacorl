@@ -1,0 +1,34 @@
+# @package _global_
+defaults:
+  - rl
+  - /env: goal_conditioned
+  - /logger: default
+  - /callbacks: tacorl
+  - /module: tacorl
+  - /datamodule: tacorl
+  - /datamodule/dataset/modalities@env.modalities: rgb_static
+  - /datamodule/dataset/modalities@env.goal_modalities: rgb_static
+  - override /datamodule/dataset/modalities: rgb_static_and_rel_actions
+  - _self_
+
+num_workers: 4
+data_dir: ~/tacorl/calvin
+
+module:
+  env: ${env}
+  play_lmp_dir: ~/tacorl/models/lmp
+
+datamodule:
+  data_dir: {data_dir}
+  num_workers: ${num_workers}
+  dataset:
+    min_window_size: 8
+    max_window_size: 16
+
+callbacks:
+  rollout:
+    data_dir: ${data_dir}
+    start_end_tasks: ${data_dir}/start_end_tasks.json
+  rollout_lh:
+    data_dir: ${data_dir}
+    start_end_tasks: ${data_dir}/start_end_tasks.json

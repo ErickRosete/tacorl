@@ -1,0 +1,23 @@
+defaults:
+  - /networks/goal_encoder@goal_encoder: default
+  - /networks/representation@perceptual_encoder: lmp_encoder
+  - /networks/actor_critic/actor@low_level_policy: discrete_gripper
+  - /networks/actor_critic/actor@high_level_policy: default
+  - _self_
+
+_target_: tacorl.modules.relay_imitation_learning.relay_imitation_learning.RelayImitationLearning
+_recursive_: False
+lr: 1e-4
+
+goal_encoder:
+  last_layer_activation: Tanh
+
+low_level_policy:
+  policy:
+    num_layers: 4
+    hidden_dim: 1024
+
+high_level_policy:
+  policy:
+    num_layers: 4
+    hidden_dim: 1024

@@ -1,0 +1,8 @@
+validation:  
+  rgb_gripper:
+    - _target_: torchvision.transforms.Resize
+      size: 84
+    - _target_: tacorl.utils.transforms.ScaleImageTensor # 0 to 255 -> 0 to 1
+    - _target_: torchvision.transforms.Normalize #0 to 1 -> -1 to 1
+      mean: [0.5,]
+      std: [0.5,]

@@ -1,0 +1,9 @@
+defaults:
+  - default
+  - _self_
+  
+monitor: val_score
+mode: max
+save_last: True
+filename: epoch_{epoch:02d}_score_{val_score:.2f}
+save_top_k: -1

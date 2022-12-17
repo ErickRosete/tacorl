@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - cql_real_world
+  - _self_
+
+datamodule:
+  dataset:
+    modalities: [rgb_static, rgb_gripper, rel_actions_world]
+
+module:
+  obs_modalities: [rgb_static, rgb_gripper]
+  goal_modalities: [rgb_static]

@@ -1,0 +1,4 @@
+_target_: tacorl.networks.visual_encoders.encoder.ResNet18
+latent_dim: 32
+pretrained: True
+freeze_backbone: True

@@ -1,0 +1,6 @@
+defaults:
+  - transforms:
+    - rl_r3m_train
+    - rl_r3m_validation
+  - default
+  - _self_

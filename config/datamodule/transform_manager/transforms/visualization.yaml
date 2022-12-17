@@ -1,0 +1,26 @@
+visualization:  
+  rgb_static:
+    - _target_: torchvision.transforms.Resize
+      size: 200
+    - _target_: tacorl.utils.transforms.ScaleImageTensor # 0 to 255 -> 0 to 1
+  rgb_gripper:
+    - _target_: torchvision.transforms.Resize
+      size: 84
+    - _target_: tacorl.utils.transforms.ScaleImageTensor # 0 to 255 -> 0 to 1
+  depth_static:
+    - _target_: torchvision.transforms.Resize
+      size: 200
+    - _target_: tacorl.utils.transforms.ScaleDepthTensor # min to max -> 0 to 1
+      min_depth: 3.5
+      max_depth: 6.3
+    - _target_: tacorl.utils.transforms.ColorizeDepth
+      colormap: jet
+  depth_gripper:
+    - _target_: torchvision.transforms.Resize
+      size: 84
+    - _target_: tacorl.utils.transforms.ScaleDepthTensor # min to max -> 0 to 1
+      min_depth: 0.0
+      max_depth: 2.0
+    - _target_: tacorl.utils.transforms.ColorizeDepth
+      colormap: jet
+

@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - base
+  - rollout_manager@evaluation.rollout_manager: tacorl
+  - _self_
+
+module_path: ~/tacorl/models/tacorl
+
+env:
+  max_episode_steps: 180
+  
+evaluation:
+  rollout_manager:
+    plan_duration: 15

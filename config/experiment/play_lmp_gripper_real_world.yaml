@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - play_lmp_real_world
+  - _self_
+
+datamodule:
+  dataset:
+    modalities: [rgb_static, rgb_gripper, rel_actions_gripper]
+    action_type: rel_actions_gripper
+  
+module: 
+  plan_proposal_goal_modalities: [rgb_static, rgb_gripper]
+  plan_proposal_obs_modalities: [rgb_static, rgb_gripper]
+  plan_recognition_modalities: [rgb_static, rgb_gripper]
+  action_decoder_modalities: [rgb_static, rgb_gripper]

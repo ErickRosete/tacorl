@@ -1,0 +1,5 @@
+defaults:
+  - policy: default
+
+_target_: tacorl.networks.actor_critic.actor.Actor
+_recursive_: False

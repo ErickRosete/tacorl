@@ -1,0 +1,14 @@
+defaults:
+  - /evaluation/rollout_manager@rollout_manager: rl_rollout
+
+_target_: tacorl.utils.callbacks.rollout_long_horizon.RolloutLongHorizon
+_recursive_: False
+data_dir: ~/tacorl/calvin/
+start_end_tasks: ~/tacorl/calvin/start_end_tasks.json
+val_every_n_epochs: 5
+num_rollouts: 32
+tasks_per_rollout: 2
+skip_first_n_epochs: 0
+max_episode_steps: 300
+min_seq_len: 32
+max_seq_len: 64

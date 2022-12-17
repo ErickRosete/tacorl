@@ -1,0 +1,5 @@
+_target_: tacorl.envs.real_world.RealWorld
+_recursive_: false
+robot: ???
+camera_manager_cfg: ${cams}
+workspace_limits: ${robot.workspace_limits}

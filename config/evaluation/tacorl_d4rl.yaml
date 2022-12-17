@@ -1,0 +1,11 @@
+# @package _global_
+defaults:  
+  - /evaluation/rollout_manager@evaluation.rollout_manager: tacorl_d4rl
+  - _self_
+
+filename: tacorl_d4rl.json
+module_path: ~/tacorl/models/d4rl/tacorl_maze2d_medium
+
+evaluation:
+  rollout_manager:
+    plan_duration: 7

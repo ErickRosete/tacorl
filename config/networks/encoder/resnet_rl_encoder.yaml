@@ -1,0 +1,3 @@
+_target_: tacorl.networks.visual_encoders.encoder.ResNetRLEncoder
+latent_dim: 32
+normalize_output: False

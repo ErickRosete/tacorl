@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - _self_
+  
+monitor: val_accuracy
+mode: max
+save_last: True
+filename: epoch_{epoch:02d}_val_accuracy_{val_accuracy:.3f}

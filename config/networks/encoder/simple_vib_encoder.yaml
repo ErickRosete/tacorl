@@ -1,0 +1,4 @@
+defaults:
+  - simple_encoder
+
+vib: True

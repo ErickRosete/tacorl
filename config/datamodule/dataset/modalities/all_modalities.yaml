@@ -1,0 +1,8 @@
+- actions
+- rel_actions_world
+- robot_obs
+- scene_obs
+- depth_gripper
+- depth_static
+- rgb_gripper
+- rgb_static

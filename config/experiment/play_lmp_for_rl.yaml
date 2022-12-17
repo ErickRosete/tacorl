@@ -1,0 +1,38 @@
+# @package _global_
+defaults:
+  - rl
+  - /env: goal_conditioned
+  - /logger: default
+  - /callbacks: play_lmp
+  - /module: play_lmp_for_rl
+  - /datamodule: play_lmp
+  - /datamodule/dataset/modalities@env.modalities: rgb_static
+  - /datamodule/dataset/modalities@env.goal_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_proposal_goal_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_proposal_obs_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.plan_recognition_modalities: rgb_static
+  - /datamodule/dataset/modalities@module.action_decoder_modalities: rgb_static
+  - override /datamodule/dataset/modalities: rgb_static_and_rel_actions
+  - _self_
+
+latent_plan_dim: 16
+num_workers: 4
+data_dir: ~/tacorl/calvin
+
+datamodule:
+  num_workers: ${num_workers}
+  data_dir: ${data_dir}
+  dataset:
+    min_window_size: 8
+    max_window_size: 16
+
+callbacks:
+  rollout:
+    data_dir: ${data_dir}
+    start_end_tasks: ${data_dir}/start_end_tasks.json
+  rollout_lh:
+    data_dir: ${data_dir}
+    start_end_tasks: ${data_dir}/start_end_tasks.json
+
+module:
+  env: ${env}

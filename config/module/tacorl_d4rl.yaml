@@ -1,0 +1,25 @@
+defaults:
+  - /networks/actor_critic/critic@critic: default
+  - _self_
+
+_target_: tacorl.modules.tacorl.tacorl_d4rl.TACORL
+_recursive_: False
+finetune_action_decoder: True
+action_decoder_lr: 3e-4
+play_lmp_dir: ~/tacorl/models/lmp_d4rl
+
+actor_lr: 1e-4
+critic_lr: 3e-4 
+discount: 0.95
+conservative_weight: 1.0
+reward_scale: 10.0
+n_action_samples: 4
+with_lagrange: True
+
+# As in Workflow
+deterministic_backup: True
+bc_epochs: 0
+
+# VIB
+with_vib: False
+vib_coefficient: 0.03

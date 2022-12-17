@@ -1,0 +1,5 @@
+_target_: tacorl.networks.plan_encoders.plan_recognition_tanh_net.PlanRecognitionTanhNetwork
+state_dim: null
+latent_plan_dim: ${latent_plan_dim}
+birnn_dropout_p: 0.0
+min_std: 0.0001

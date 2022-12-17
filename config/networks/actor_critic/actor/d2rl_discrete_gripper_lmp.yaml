@@ -1,0 +1,4 @@
+defaults:
+  - d2rl_discrete_gripper
+  - /networks/encoder@encoder: lmp_vision_encoder
+  - _self_

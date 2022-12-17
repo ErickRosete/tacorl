@@ -1,0 +1,29 @@
+defaults:
+  - /networks/actor_critic/actor@actor: discrete_gripper
+  - /networks/actor_critic/critic@critic: default
+  - /networks/representation@actor_encoder: lmp_encoder
+  - /networks/representation@critic_encoder: lmp_encoder
+  - /networks/goal_encoder@goal_encoder: default
+  - _self_
+
+_target_: tacorl.modules.cql.cql_offline_lightning.CQL_Offline
+_recursive_: False
+discount: 0.99
+actor_lr: 1e-4
+critic_lr: 3e-4 
+conservative_weight: 1.0
+n_action_samples: 4
+with_lagrange: True
+reward_scale: 10.0
+deterministic_backup: False
+bc_epochs: 5
+
+# DR3
+with_dr3: False
+dr3_coefficient: 0.03 
+
+# VIB
+with_vib: False
+vib_coefficient: 0.03
+
+
