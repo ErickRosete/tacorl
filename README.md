@@ -10,9 +10,10 @@
 [Erick Rosete-Beas](https://www.erickrosete.com/), [Oier Mees](https://www.oiermees.com/), [Gabriel Kalweit](https://nr.informatik.uni-freiburg.de/people/gabriel-kalweit), [Joschka Boedecker](https://nr.informatik.uni-freiburg.de/people/joschka-boedecker), [Wolfram Burgard](http://www2.informatik.uni-freiburg.de/~burgard)
 
 
-We present TACO-RL a hierarchical general-purpose agent learned by combining imitation learning and model-free reinforcement learning. Our approach learns entirely from offline, unlabeled data, without access to manually specified rewards or additional online exploration.
-Our model perform a variety of goal conditioned tasks at test-time. In experiments, we find that our approach substantially outperforms other goal-conditioned policies when performing complex Long-Horizon tasks.
-
+We present **TACO-RL** (**T**ask-**A**gnosti**C** **O**ffline
+**R**einforcement **L**earning), a hierarchical general-purpose agent that absorbs uncurated, unlabeled, highly diverse, offline data. TACO-RL makes sense of this data by combining the strengths of imitation learning and offline RL.
+We combine a low-level policy that learns latent skills via imitation and a high-level policy learned from offline RL for skill-chaining the latent behaviors.
+We learn a single multi-task visuomotor policy for over 25 tasks in the real world that outperforms state-of-the-art baselines by an order of magnitude.
 ![](media/teaser.gif)
 
 # :computer:  Quick Start
