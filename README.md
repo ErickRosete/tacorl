@@ -60,12 +60,20 @@ Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_w
 $ wget http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip
 $ unzip tacorl_calvin.zip
 ```
+## Acknowledgements
+
+This work uses code from the following open-source projects and datasets:
+
+#### CALVIN
+Original:  [https://github.com/mees/calvin](https://github.com/mees/calvin)
+License: [MIT](https://github.com/mees/calvin/blob/main/LICENSE)
+
 
 ## :writing_hand: Citation
 
 If you find the dataset or code useful, please cite:
 
-```
+```bibtex
 @inproceedings{rosete2022tacorl,
 author = {Erick Rosete-Beas and Oier Mees and Gabriel Kalweit and Joschka Boedecker and Wolfram Burgard},
 title = {Latent Plans for Task Agnostic Offline Reinforcement Learning},
