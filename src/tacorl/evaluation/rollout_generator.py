@@ -15,8 +15,8 @@ class BaseRolloutGenerator(object):
 
     def __init__(
         self,
-        data_dir: str = "~/thesis/calvin/validation",
-        start_end_tasks: str = "~/thesis/calvin/start_end_tasks.json",
+        data_dir: str = "~/tacorl/calvin/validation",
+        start_end_tasks: str = "~/tacorl/calvin/start_end_tasks.json",
         strategy: str = "longest",
         min_seq_len: int = 16,
         max_seq_len: int = 64,

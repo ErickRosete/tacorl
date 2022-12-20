@@ -36,7 +36,7 @@ def add_cwd(path):
 
 def pkg_path(rel_path):
     """Generates a global path that is relative to
-    the root of thesis package.
+    the root of tacorl package.
     (Could be generalized for any python module)
 
     Args:

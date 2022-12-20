@@ -5,9 +5,6 @@ import hydra
 import torch
 from omegaconf import OmegaConf
 
-from tacorl.modules.representation_learning.representation_lightning import (
-    RepresentationLightning,
-)
 from tacorl.utils.misc import load_class
 
 
@@ -128,16 +125,7 @@ def get_config_from_dir(dir):
     return OmegaConf.load(config_yaml)
 
 
-@hydra.main(config_path="../../config", config_name="extract_repr_network")
-def extract_repr_network(cfg):
-    lightning_model = RepresentationLightning.load_from_checkpoint(
-        checkpoint_path=cfg.model_name, **cfg.lightning
-    )
-    network_model = lightning_model.model
-    torch.save(network_model.state_dict(), cfg.output_name)
-
-
 if __name__ == "__main__":
-    play_lmp_dir = Path("~/thesis/models/play_lmp").expanduser()
+    play_lmp_dir = Path("~/tacorl/models/play_lmp").expanduser()
     model = load_pl_module_from_checkpoint(files_dir=play_lmp_dir)
     print()

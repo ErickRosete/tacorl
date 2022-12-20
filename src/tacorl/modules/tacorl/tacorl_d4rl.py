@@ -19,7 +19,7 @@ class TACORL(CQL_Offline):
 
     def __init__(
         self,
-        play_lmp_dir: str = "~/thesis/models/play_lmp",
+        play_lmp_dir: str = "~/tacorl/models/play_lmp",
         finetune_action_decoder: bool = False,
         action_decoder_lr: float = 1e-4,
         *args,

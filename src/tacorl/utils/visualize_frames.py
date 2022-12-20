@@ -25,8 +25,8 @@ def save_video(video_filename: str, images: np.ndarray, fps: int = 45):
 
 
 def main():
-    dir = "D:/thesis/dataset/rw_play_data_video"
-    # dir = "/mnt/SSD/thesis/dataset/real_world_15"
+    dir = "D:/tacorl/dataset/rw_play_data_video"
+    # dir = "/mnt/SSD/tacorl/dataset/real_world_15"
     dir_file_list = get_file_list(dir, sort_list=True)
     rgb_static_images, rgb_gripper_images = [], []
     for i, filepath in enumerate(dir_file_list):

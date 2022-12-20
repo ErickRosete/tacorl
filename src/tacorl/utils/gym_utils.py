@@ -14,7 +14,7 @@ def make_env(env_cfg):
     if sel_env_spec is None:
         return None
 
-    if "thesis" in sel_env_spec.entry_point:
+    if "tacorl" in sel_env_spec.entry_point:
         env = gym.make(sel_env_spec.id, **env_cfg)
         env._max_episode_steps = env_cfg.max_episode_steps
     else:

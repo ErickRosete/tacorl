@@ -77,9 +77,9 @@ def load_dataset_statistics(train_dataset_dir, transforms):
                 conf_transforms = transforms[transf_key][modality]
                 dataset_transforms = statistics[modality]
                 for dataset_trans in dataset_transforms:
-                    # Use transforms from thesis not calvin_agent
+                    # Use transforms from tacorl not calvin_agent
                     dataset_trans["_target_"] = dataset_trans["_target_"].replace(
-                        "calvin_agent", "thesis"
+                        "calvin_agent", "tacorl"
                     )
                     exists = False
                     for i, conf_trans in enumerate(conf_transforms):
