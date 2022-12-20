@@ -1,9 +1,12 @@
 # Dataset
 ## Real World
-For the real world robot, we collected nine hours of play data by teleoperating a Franka Emika
-Panda robot arm, were we also manipulate objects in a 3D tabletop environment. This environment
-consists of a table with a drawer that can be opened and closed. The environment also contains a
-sliding door on top of a wooden base, such that the handle can be reached by the end effector. On top of the drawer, there are three led buttons with green, blue and orange coatings to be able to identify them, on the recorded play data we only interacted with the led button with green coating. When the led button is clicked, it toggles the state of the light. Additionally, there are three different colored blocks with letters on top
+For the real world robot, we collected 9 hours of play data by asking users to teleoperate a Franka Emika
+Panda robot arm on a tabletop environment without a specific task in mind.
+This environment consists of a table with a drawer that can be opened and closed. It also contains a
+sliding door on top of a wooden base, such that the handle can be reached by the end effector. 
+On top of the drawer, there are three LED buttons with green, blue and orange coatings. 
+When the LED button is clicked, it toggles the state of the light. 
+Additionally, there are three different colored blocks with letters on each side.
 
 ### Download
 To download the real-world dataset please access the following webpage

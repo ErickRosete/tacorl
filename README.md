@@ -10,9 +10,10 @@
 [Erick Rosete-Beas](https://www.erickrosete.com/), [Oier Mees](https://www.oiermees.com/), [Gabriel Kalweit](https://nr.informatik.uni-freiburg.de/people/gabriel-kalweit), [Joschka Boedecker](https://nr.informatik.uni-freiburg.de/people/joschka-boedecker), [Wolfram Burgard](http://www2.informatik.uni-freiburg.de/~burgard)
 
 
-We present TACO-RL a hierarchical general-purpose agent learned by combining imitation learning and model-free reinforcement learning. Our approach learns entirely from offline, unlabeled data, without access to manually specified rewards or additional online exploration.
-Our model perform a variety of goal conditioned tasks at test-time. In experiments, we find that our approach substantially outperforms other goal-conditioned policies when performing complex Long-Horizon tasks.
-
+We present **TACO-RL** (**T**ask-**A**gnosti**C** **O**ffline
+**R**einforcement **L**earning), a hierarchical general-purpose agent that absorbs uncurated, unlabeled, highly diverse, offline data. TACO-RL makes sense of this data by combining the strengths of imitation learning and offline RL.
+We combine a low-level policy that learns latent skills via imitation and a high-level policy learned from offline RL for skill-chaining the latent behaviors.
+We learn a single multi-task visuomotor policy for over 25 tasks in the real world that outperforms state-of-the-art baselines by an order of magnitude.
 ![](media/teaser.gif)
 
 # :computer:  Quick Start
@@ -59,12 +60,20 @@ Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_w
 $ wget http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip
 $ unzip tacorl_calvin.zip
 ```
+## Acknowledgements
+
+This work uses code from the following open-source projects and datasets:
+
+#### CALVIN
+Original:  [https://github.com/mees/calvin](https://github.com/mees/calvin)
+License: [MIT](https://github.com/mees/calvin/blob/main/LICENSE)
+
 
 ## :writing_hand: Citation
 
 If you find the dataset or code useful, please cite:
 
-```
+```bibtex
 @inproceedings{rosete2022tacorl,
 author = {Erick Rosete-Beas and Oier Mees and Gabriel Kalweit and Joschka Boedecker and Wolfram Burgard},
 title = {Latent Plans for Task Agnostic Offline Reinforcement Learning},
