@@ -49,8 +49,3 @@ tcp position (3): x,y,z in relative gripper frame coordinates normalized and cli
 tcp orientation (3): euler angles x,y,z in relative gripper frame coordinates normalized and clipped to (-1, 1) with scaling factor 20
 gripper_action (1): binary (close = -1, open = 1)
 ```
-
-## Simulation
-For the simulation experiments we use the CALVIN dataset, it comes with with 6 hours of teleoperated play data in each of the 4 environments.
-You can visit [CALVIN repository](https://github.com/mees/calvin/blob/main/dataset/README.md) to download the original dataset.
-

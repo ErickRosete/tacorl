@@ -18,15 +18,32 @@ We learn a single multi-task visuomotor policy for over 25 tasks in the real wor
 
 # :computer:  Quick Start
 The package was tested using python 3.7 and Ubuntu 20.04 LTS. <br/>
-To install use the package manager [pip](https://pip.pypa.io/en/stable/).
 ```bash
 # At root of project
-$ conda create -n tacorl_venv python=3.7 
-$ conda activate tacorl_venv
-$ sh install.sh
+git clone https://github.com/ErickRosete/tacorl.git
+export TACORL_ROOT=$(pwd)/tacorl
+conda create -n tacorl_venv python=3.7 
+conda activate tacorl_venv
+sh install.sh
  ```
 This script install all the required dependencies for this repository.
-If you want to download the dataset follow [this instructions](./dataset/README.md)
+If you want to download the dataset follow 
+
+## Download
+### Task-Agnostic Real World Robot Play Dataset
+We host the multimodal 9 hours of human teleoperated [play dataset on kaggle](https://www.kaggle.com/datasets/oiermees/taco-robot).
+[More details on the dataset](./dataset/README.md)
+Download the dataset:
+```
+cd $TACORL_ROOT/dataset
+kaggle datasets download -d oiermees/taco-robot
+```
+### CALVIN Dataset
+If you want to train on the simulated [CALVIN](https://github.com/mees/calvin) dataset, we augment the original dataset in order to balance the task distribution:
+```bash
+cd $HULC2_ROOT/dataset
+wget https://tacorl.cs.uni-freiburg.de/dataset/taco_rl_calvin.zip && unzip taco_rl_calvin.zip && rm taco_rl_calvin.zip
+```
 
 ##	:weight_lifting_man: Train TACO-RL Agent
 ### Simulation
