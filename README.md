@@ -32,8 +32,6 @@ If you want to download the dataset follow
 ## Download
 ### Task-Agnostic Real World Robot Play Dataset
 We host the multimodal 9 hours of human teleoperated [play dataset on kaggle](https://www.kaggle.com/datasets/oiermees/taco-robot).
-[More details on the dataset](./dataset/README.md)
-Download the dataset:
 ```
 cd $TACORL_ROOT/dataset
 kaggle datasets download -d oiermees/taco-robot
