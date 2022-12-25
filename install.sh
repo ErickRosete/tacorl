@@ -19,7 +19,7 @@ cd ../
 # Install R3M
 export R3M_ROOT="$TACORL_ROOT/dependencies/r3m"
 if [ ! -d "$R3M_ROOT" ] ; then
-    git clone https://github.com/facebookresearch/r3m.git $R3M_ROOT
+    git clone https://github.com/mees/r3m.git $R3M_ROOT
     cd "$R3M_ROOT"
 else
     cd "$R3M_ROOT"
