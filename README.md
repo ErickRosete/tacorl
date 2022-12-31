@@ -5,7 +5,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[**Latent Plans for Task-Agnostic Offline Reinforcement Learning**](https://arxiv.org/pdf)
+[**Latent Plans for Task-Agnostic Offline Reinforcement Learning**](https://arxiv.org/pdf/2209.08959.pdf)
 
 [Erick Rosete-Beas](https://www.erickrosete.com/), [Oier Mees](https://www.oiermees.com/), [Gabriel Kalweit](https://nr.informatik.uni-freiburg.de/people/gabriel-kalweit), [Joschka Boedecker](https://nr.informatik.uni-freiburg.de/people/joschka-boedecker), [Wolfram Burgard](http://www2.informatik.uni-freiburg.de/~burgard)
 
