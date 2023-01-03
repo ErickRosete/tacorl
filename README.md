@@ -40,7 +40,7 @@ kaggle datasets download -d oiermees/taco-robot
 If you want to train on the simulated [CALVIN](https://github.com/mees/calvin) dataset, we augment the original dataset in order to balance the task distribution:
 ```bash
 cd $TACORL_ROOT/dataset
-wget https://tacorl.cs.uni-freiburg.de/dataset/taco_rl_calvin.zip && unzip taco_rl_calvin.zip && rm taco_rl_calvin.zip
+wget http://tacorl.cs.uni-freiburg.de/dataset/taco_rl_calvin.zip && unzip taco_rl_calvin.zip && rm taco_rl_calvin.zip
 ```
 
 ##	:weight_lifting_man: Train TACO-RL Agent
