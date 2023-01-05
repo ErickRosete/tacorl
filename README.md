@@ -68,7 +68,7 @@ python scripts/train.py experiment=tacorl_real_world data_dir="dataset/real_worl
  ```
 
 ## :trophy: Evaluation
-To run our experiments evaluation on the calvin environment you can use the following script
+To run our evaluation on the calvin environment you can use the following script
 ```bash
 python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" 
  ```
@@ -77,6 +77,7 @@ You can choose between the following options
 - `tacorl_hard`: Single goal tasks where the goal image does not contain the end effector achieving the task.
 - `tacorl_lh_easy`: Perform two tasks in a row using a single goal image.
 - `tacorl_lh_seq_easy`: Perform five tasks in a row using intermediate goal images.
+
 Analogous evaluation configurations are available for CQL, LMP and RIL.
 
 ### :student: Pre-trained Model
