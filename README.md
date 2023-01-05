@@ -67,7 +67,17 @@ To run the TACO-RL training
 python scripts/train.py experiment=tacorl_real_world data_dir="dataset/real_world" module.play_lmp_dir="models/lmp_real_world"
  ```
 
-![](media/teaser.gif)
+## :trophy: Evaluation
+To run our experiments evaluation on the calvin environment you can use the following script
+```bash
+python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" 
+ ```
+You can choose between the following options
+- `tacorl_easy`: Single goal tasks where the goal image contains the end effector achieving the task.
+- `tacorl_hard`: Single goal tasks where the goal image does not contain the end effector achieving the task.
+- `tacorl_lh_easy`: Perform two tasks in a row using a single goal image.
+- `tacorl_lh_seq_easy`: Perform five tasks in a row using intermediate goal images.
+Analogous evaluation configurations are available for CQL, LMP and RIL.
 
 ### :student: Pre-trained Model
 Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip) trained on the static camera rgb images on CALVIN environment D.
@@ -75,6 +85,7 @@ Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_w
 $ wget http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip
 $ unzip tacorl_calvin.zip
 ```
+
 ## Acknowledgements
 
 This work uses code from the following open-source projects and datasets:
