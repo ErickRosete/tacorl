@@ -24,19 +24,30 @@ class TACORL(CQL_Offline):
     def __init__(
         self,
         play_lmp_dir: str = "~/tacorl/models/play_lmp",
+        lmp_epoch_to_load: int = -1,
+        overwrite_lmp_cfg: dict = {},
         finetune_action_decoder: bool = False,
         action_decoder_lr: float = 1e-4,
         *args,
         **kwargs,
     ):
+        # LMP Hyperparams
+        self.play_lmp_dir = Path(play_lmp_dir).expanduser()
+        self.lmp_epoch_to_load = lmp_epoch_to_load
+        self.overwrite_lmp_cfg = overwrite_lmp_cfg
+
+        # Taco-RL Hyperparams
         self.finetune_action_decoder = finetune_action_decoder
         self.action_decoder_lr = action_decoder_lr
-        self.play_lmp_dir = Path(play_lmp_dir).expanduser()
         super().__init__(*args, **kwargs)
 
     def build_networks(self):
         # Load LMP networks
-        play_lmp = load_pl_module_from_checkpoint(self.play_lmp_dir)
+        play_lmp = load_pl_module_from_checkpoint(
+            self.play_lmp_dir,
+            epoch=self.lmp_epoch_to_load,
+            overwrite_cfg=self.overwrite_lmp_cfg,
+        )
         self.action_decoder = play_lmp.action_decoder
         self.perceptual_encoder = play_lmp.perceptual_encoder
         self.plan_recognition = play_lmp.plan_recognition

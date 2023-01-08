@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 from tacorl.utils.gym_utils import make_env
 from tacorl.utils.misc import log_rank_0
-from tacorl.utils.networks import load_pl_module_from_checkpoint
+from tacorl.utils.networks import load_evaluation_checkpoint
 
 log = logging.getLogger(__name__)
 
@@ -255,8 +255,7 @@ class EvaluationManager(object):
 
 @hydra.main(config_path="../config", config_name="evaluate")
 def main(cfg):
-    module_path = str(Path(cfg.module_path).expanduser())
-    pl_module = load_pl_module_from_checkpoint(module_path).cuda()
+    pl_module = load_evaluation_checkpoint(cfg).cuda()
     env = pl_module.env if hasattr(pl_module, "env") else make_env(cfg.env)
     eval_manager = EvaluationManager(pl_module=pl_module, env=env, **cfg.evaluation)
     if cfg.eval_type == "short_horizon":

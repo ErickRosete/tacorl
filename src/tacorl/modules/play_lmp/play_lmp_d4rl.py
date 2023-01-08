@@ -15,7 +15,7 @@ from tacorl.utils.distributions import TanhNormal
 
 
 class PlayLMP(pl.LightningModule):
-    """Basic Actionable models implementation using PyTorch Lightning"""
+    """LMP implementation using PyTorch Lightning"""
 
     def __init__(
         self,

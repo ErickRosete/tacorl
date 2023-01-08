@@ -6,7 +6,7 @@ import torch
 from robot_io.cams.realsense.realsense import Realsense  # noqa
 
 from tacorl.utils.misc import log_rank_0
-from tacorl.utils.networks import load_pl_module_from_checkpoint
+from tacorl.utils.networks import load_evaluation_checkpoint
 
 
 @hydra.main(config_path="../config", config_name="evaluate_real_world")
@@ -16,8 +16,7 @@ def main(cfg):
 
     """
     # Init module
-    module_path = str(Path(cfg.module_path).expanduser())
-    pl_module = load_pl_module_from_checkpoint(module_path).cuda()
+    pl_module = load_evaluation_checkpoint(cfg).cuda()
 
     modalities = list(pl_module.all_modalities)
     robot = hydra.utils.instantiate(cfg.robot)

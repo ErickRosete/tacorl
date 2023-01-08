@@ -6,3 +6,9 @@ defaults:
 
 eval_type: short_horizon
 filename: lmp_easy_tasks.json
+
+data_dir: ~/tacorl/calvin
+evaluation:
+  single_task_rollout_generator:
+    data_dir: ${data_dir}
+    start_end_tasks: ${data_dir}/start_end_tasks.json

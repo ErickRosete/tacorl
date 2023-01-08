@@ -75,7 +75,23 @@ def load_transform_manager_from_dir(dirpath):
     return hydra.utils.instantiate(transform_manager_cfg)
 
 
-def load_pl_module_from_checkpoint(filepath: Union[Path, str], epoch=-1):
+def load_evaluation_checkpoint(cfg):
+    epoch = cfg.epoch_to_load if "epoch_to_load" in cfg else -1
+    overwrite_cfg = cfg.overwrite_module_cfg if "overwrite_module_cfg" in cfg else {}
+    module_path = str(Path(cfg.module_path).expanduser())
+    pl_module = load_pl_module_from_checkpoint(
+        module_path,
+        epoch=epoch,
+        overwrite_cfg=overwrite_cfg,
+    ).cuda()
+    return pl_module
+
+
+def load_pl_module_from_checkpoint(
+    filepath: Union[Path, str],
+    epoch: int = -1,
+    overwrite_cfg: dict = {},
+):
     if isinstance(filepath, str):
         filepath = Path(filepath)
 
@@ -95,7 +111,8 @@ def load_pl_module_from_checkpoint(filepath: Union[Path, str], epoch=-1):
     print(f"class_name {class_name}")
     module_class = load_class(class_name)
     print(f"Loading model from {ckpt_path}")
-    model = module_class.load_from_checkpoint(ckpt_path, **config.module)
+    load_cfg = {**config.module, **overwrite_cfg}
+    model = module_class.load_from_checkpoint(ckpt_path, **load_cfg)
     print(f"Finished loading model {ckpt_path}")
     return model
 

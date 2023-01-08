@@ -15,7 +15,7 @@ from omegaconf import DictConfig
 from robot_io.cams.realsense.realsense import Realsense  # noqa
 
 from tacorl.utils.networks import (
-    load_pl_module_from_checkpoint,
+    load_evaluation_checkpoint,
     load_transform_manager_from_dir,
 )
 from tacorl.utils.transforms import TransformManager
@@ -304,9 +304,8 @@ class EvaluationManager:
 @hydra.main(config_path="../config", config_name="evaluate_real_world_from_dataset")
 def main(cfg):
     # Init module
-    epoch = cfg.epoch_to_load if "epoch_to_load" in cfg else -1
     module_path = str(Path(cfg.module_path).expanduser())
-    pl_module = load_pl_module_from_checkpoint(module_path, epoch=epoch).cuda()
+    pl_module = load_evaluation_checkpoint(cfg).cuda()
     transform_manager = load_transform_manager_from_dir(module_path)
     modalities = list(pl_module.all_modalities)
     robot = hydra.utils.instantiate(cfg.robot)

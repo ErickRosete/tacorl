@@ -66,11 +66,15 @@ To run the TACO-RL training
 ```bash
 python scripts/train.py experiment=tacorl_real_world data_dir="dataset/real_world" module.play_lmp_dir="models/lmp_real_world"
  ```
+The training will start automatically with the last checkpoint of the LMP model if you want to run another checkpoint for further experimentation, you can specify it as follows
+```bash
+python scripts/train.py experiment=tacorl_real_world data_dir="dataset/real_world" module.play_lmp_dir="models/lmp_real_world" +module.lmp_epoch_to_load=30
+ ```
 
 ## :trophy: Evaluation
 To run our evaluation on the calvin environment you can use the following script
 ```bash
-python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" 
+python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" data_dir="dataset/calvin"
  ```
 You can choose between the following options
 - `tacorl_easy`: Single goal tasks where the goal image contains the end effector achieving the task.
@@ -79,6 +83,17 @@ You can choose between the following options
 - `tacorl_lh_seq_easy`: Perform five tasks in a row using intermediate goal images.
 
 Analogous evaluation configurations are available for CQL, LMP and RIL.
+
+### Additional evaluation instructions
+The evaluation will use the last epoch of the TACO-RL training, if you want to run another epoch you can also explicitly state it
+```bash
+python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" data_dir="dataset/calvin" +epoch_to_load=30
+ ```
+
+In case you want to change something from the module you are evaluating, e.g. changing the play_lmp_dir path to load, you can run the following command
+```bash
+python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" data_dir="dataset/calvin" +overwrite_module_cfg.play_lmp_dir="LMP_PATH_TO_LOAD"
+ ```
 
 ### :student: Pre-trained Model
 Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip) trained on the static camera rgb images on CALVIN environment D.

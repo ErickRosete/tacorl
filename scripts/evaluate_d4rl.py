@@ -12,7 +12,7 @@ from omegaconf import DictConfig
 from tqdm import tqdm
 
 from tacorl.utils.misc import log_rank_0
-from tacorl.utils.networks import load_pl_module_from_checkpoint
+from tacorl.utils.networks import load_evaluation_checkpoint
 
 log = logging.getLogger(__name__)
 
@@ -69,8 +69,7 @@ class EvaluationManager(object):
 
 @hydra.main(config_path="../config", config_name="evaluate_d4rl")
 def main(cfg):
-    module_path = str(Path(cfg.module_path).expanduser())
-    pl_module = load_pl_module_from_checkpoint(module_path).cuda()
+    pl_module = load_evaluation_checkpoint(cfg).cuda()
     env = gym.make(cfg.d4rl_env)
     eval_manager = EvaluationManager(pl_module=pl_module, env=env, **cfg.evaluation)
     model_results = eval_manager.evaluate_task(
