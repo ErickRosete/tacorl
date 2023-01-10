@@ -72,7 +72,7 @@ python scripts/train.py experiment=tacorl_real_world data_dir="dataset/real_worl
  ```
 
 ## :trophy: Evaluation
-To run our evaluation on the calvin environment you can use the following script
+To run our evaluation on the CALVIN environment you can use the following script
 ```bash
 python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" data_dir="dataset/calvin"
  ```
@@ -96,7 +96,7 @@ python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVA
  ```
 
 ### :student: Pre-trained Model
-Download the [TACO-RL model checkpoint](http://calvin.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip) trained on the static camera rgb images on CALVIN environment D.
+Download the [TACO-RL model checkpoint](http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip) trained on the static camera rgb images on CALVIN environment D.
 ```
 $ wget http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip
 $ unzip tacorl_calvin.zip
