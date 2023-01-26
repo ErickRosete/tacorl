@@ -95,8 +95,9 @@ In case you want to change something from the module you are evaluating, e.g. ch
 python scripts/evaluate.py evaluation=tacorl_easy module_path="PATH_MODEL_TO_EVAL" data_dir="dataset/calvin" +overwrite_module_cfg.play_lmp_dir="LMP_PATH_TO_LOAD"
  ```
 
-### :student: Pre-trained Model
+### :student: Pre-trained Models
 Download the [TACO-RL model checkpoint](http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip) trained on the static camera rgb images on CALVIN environment D.
+Additionally, you can find checkpoints for the baselines CQL, RIL and PlayLMP inside the zip file.
 ```
 $ wget http://tacorl.cs.uni-freiburg.de/model_weights/tacorl_calvin.zip
 $ unzip tacorl_calvin.zip
